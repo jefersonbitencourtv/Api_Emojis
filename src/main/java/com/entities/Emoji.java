@@ -9,7 +9,6 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-
 public class Emoji {
     private String emoji;
 
