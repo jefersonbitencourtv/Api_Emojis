@@ -3,16 +3,10 @@ package com.services;
 import com.entities.CampoAlterar;
 import com.entities.Emoji;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.stream.JsonReader;
 import com.request.JsonRequest;
 import org.springframework.stereotype.Service;
-
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -29,8 +23,6 @@ public class GeneratorJsonService {
         //Campos que deseja alterar no arquivo json recebido
         json = json.replaceAll("emojis", "emoji");
 
-
-
         Emoji[] emojis = new Gson().fromJson(json, Emoji[].class);
 
         Gson gson = new Gson();
@@ -43,10 +35,7 @@ public class GeneratorJsonService {
         file.close();
     }
 
-
     public void generatedJsonUsingUrl(JsonRequest input) throws IOException {
-
-
         //Campos que deseja alterar no arquivo json recebido
         //input = input.replaceAll("emojis", "emoji");
         List<CampoAlterar> camposAlterar = input.getAlterarCampo();
@@ -61,7 +50,6 @@ public class GeneratorJsonService {
 
         String jsonArchive = gson.toJson(emojis);
 
-        //return jsonArchive;
         FileWriter file = new FileWriter("/Users/jvieira/Downloads/emojisGenerator/src/main/resources/emojis2.json");
         file.write(jsonArchive);
         file.flush();
