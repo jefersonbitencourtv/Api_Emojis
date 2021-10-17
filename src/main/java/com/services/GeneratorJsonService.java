@@ -17,7 +17,7 @@ public class GeneratorJsonService {
     public void generatedJsonUsingArchive() throws IOException {
         String json = String.join(" ",
                 Files.readAllLines(
-                        Paths.get("/Users/jvieira/Downloads/emojisGenerator/src/main/resources/emojis.json"),
+                        Paths.get("src/main/resources/emojis.json"),
                         StandardCharsets.UTF_8));
 
         //Campos que deseja alterar no arquivo json recebido
@@ -29,7 +29,7 @@ public class GeneratorJsonService {
 
         String jsonArchive = gson.toJson(emojis);
 
-        FileWriter file = new FileWriter("/Users/jvieira/Downloads/emojisGenerator/src/main/resources/emojis2.json");
+        FileWriter file = new FileWriter("src/main/resources/emojis2.json");
         file.write(jsonArchive);
         file.flush();
         file.close();
@@ -50,7 +50,7 @@ public class GeneratorJsonService {
 
         String jsonArchive = gson.toJson(emojis);
 
-        FileWriter file = new FileWriter("/Users/jvieira/Downloads/emojisGenerator/src/main/resources/emojis2.json");
+        FileWriter file = new FileWriter("src/main/resources/emojis2.json");
         file.write(jsonArchive);
         file.flush();
         file.close();
