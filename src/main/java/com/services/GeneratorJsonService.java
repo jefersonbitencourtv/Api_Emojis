@@ -41,7 +41,7 @@ public class GeneratorJsonService {
         List<CampoAlterar> camposAlterar = input.getAlterarCampo();
         String json = input.getJson().toString();
 
-        for(int i =0; i <= camposAlterar.size(); i= i+2){
+        for(int i =0; i < camposAlterar.size(); i= i+1){
             json = json.replaceAll(camposAlterar.get(i).getEntrada(),camposAlterar.get(i).getSaida());
         }
 
