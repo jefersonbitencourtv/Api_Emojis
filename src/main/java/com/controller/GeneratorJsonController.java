@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
+@CrossOrigin(origins="*")
 @RequestMapping("/json/v1")
 public class GeneratorJsonController {
     @Autowired
@@ -18,20 +19,20 @@ public class GeneratorJsonController {
 
     @PostMapping
     public ResponseEntity<String> postJson(@RequestBody JsonRequest json) throws IOException {
-        /*String nome = "emojis.json";
+        String nome = "emojis.json";
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Content-Disposition", "attachment; filename=\"" + nome + "\"");
-        /*var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, "corpus_download.json", true);
-        return ResponseEntity.ok().headers(responseHeaders).body(service.generatedJsonUsingUrl(json));*/
-        service.generatedJsonUsingUrl(json);
+        String resposta = service.generatedJsonUsingUrl(json);
+        System.out.println(resposta);
+        return ResponseEntity.ok().headers(responseHeaders).body(resposta);
+        //service.generatedJsonUsingUrl(json);
 
-        //System.out.println(json);
-        return ResponseEntity.ok("Sucesso");
+        //return ResponseEntity.ok("Sucesso");
     }
 
     @GetMapping
     public ResponseEntity<String> teste(){
+        System.out.println("Testando");
         return ResponseEntity.ok("Ola");
     }
 

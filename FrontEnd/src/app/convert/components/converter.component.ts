@@ -1,2 +1,0 @@
-export class Converter.Component {
-}
