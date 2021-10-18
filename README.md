@@ -5,6 +5,8 @@
 
 
 <br> **Execuao** </br>
+<br>Pode ser testado e utilizado diretamente pela url ou executado na maquina lcaol</br>
+<br>https://jsonemojijava.herokuapp.com/</br>
 <br> No terminal acessar a pasta Api_Emojis e executar ./mvnw spring-boot:run </br>
 <br> No terminal acessar a pasta frontend dentro de Api_Emojis e executar npm start o navegador ira abrir ou poderia acessar pela porta padrao localhost:3000 ou a que seu npm fornecer</br>
 
