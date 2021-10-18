@@ -5,7 +5,7 @@ class App extends Component {
 
    getText = () => {
     var area = document.getElementById("txtArea");
-    fetch('http://192.168.15.28:8080/json/v1',{
+    fetch('http://seuipv4/json/v1',{
       method:'POST',
       headers: {'Content-Type':'application/json'},
       body: area.value
@@ -17,7 +17,7 @@ class App extends Component {
       a.download = "emojis.json";
       a.click();
     })
-    //fetch('http://192.168.15.28:8080/json/v1').then(console.log("sucess"))
+
   }
 
   render (){
@@ -26,7 +26,7 @@ class App extends Component {
         <h1> Api Convert </h1>
         <Input/>
         <div>
-         <input type = "button" value="click here" onClick = {this.getText} />
+         <input type = "button" value="Converter" onClick = {this.getText} />
         </div>
     </div>
     
